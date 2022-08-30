@@ -34,7 +34,7 @@ class _NavigationState extends State<Navigation> {
       content: NavigationBody(
         index: _currentPage,
         transitionBuilder: (child, animation) =>
-            EntrancePageTransition(child: child, animation: animation),
+            EntrancePageTransition(animation: animation, child: child),
         children: const <Widget>[
           MeetingsPage(),
           EditRegistrationPage(),
