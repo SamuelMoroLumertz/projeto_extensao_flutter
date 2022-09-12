@@ -1,6 +1,6 @@
 import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:flutter_application/pages/navigation.dart';
+import 'package:flutter_application/features/main/presentation/navigation.dart';
 
 main() {
   runApp(const MyApp());

@@ -1,7 +1,7 @@
 import 'package:fluent_ui/fluent_ui.dart';
-import 'package:flutter_application/pages/registration_page.dart';
 
-import 'meetings_page.dart';
+import '../../meetings/presentation/meetings.dart';
+import '../../registration/presentation/registration.dart';
 
 class Navigation extends StatefulWidget {
   const Navigation({Key? key}) : super(key: key);

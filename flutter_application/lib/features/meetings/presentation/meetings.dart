@@ -2,8 +2,9 @@ import 'package:bitsdojo_window/bitsdojo_window.dart';
 import 'package:fluent_ui/fluent_ui.dart';
 import 'package:flutter/material.dart' as material;
 
-import '../models/responsable_manager.dart';
-import '../utils/window_buttons.dart';
+import '../../../models/meetings_header.dart';
+import '../../../models/responsable_manager.dart';
+import '../../shared/window_title_bar.dart';
 
 class MeetingsPage extends StatelessWidget {
   const MeetingsPage({Key? key}) : super(key: key);
@@ -25,46 +26,48 @@ class MeetingsPageContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [
-              Color.fromARGB(246, 25, 18, 58),
-              Color.fromARGB(255, 71, 58, 100)
-            ],
-            stops: [0.0, 1.0],
-          ),
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color.fromARGB(246, 25, 18, 58),
+            Color.fromARGB(255, 71, 58, 100)
+          ],
+          stops: [0.0, 1.0],
         ),
-        child: Column(
-          children: [
-            WindowTitleBarBox(
-              child: Row(
-                children: [
-                  Expanded(
-                    child: MoveWindow(),
+      ),
+      child: Column(
+        children: [
+          const WindowTitleBar(),
+          const Text(
+            'Reuniões',
+            overflow: TextOverflow.ellipsis,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Color.fromARGB(235, 255, 255, 255),
+              fontSize: 30,
+            ),
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height - 89,
+            child: SingleChildScrollView(
+              child: Column(
+                children: const [
+                  ResponsibleManager(),
+                  SizedBox(
+                    height: 30,
                   ),
-                  const WindowButtons(),
+                  MeetingsHeader(),
                 ],
               ),
             ),
-            const Text(
-              'Reuniões',
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                color: Color.fromARGB(235, 255, 255, 255),
-                fontSize: 30,
-              ),
-            ),
-            const SizedBox(
-              height: 30,
-            ),
-            const ResponsibleManager(),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

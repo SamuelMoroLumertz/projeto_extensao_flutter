@@ -49,9 +49,9 @@ class ResponsibleManager extends StatelessWidget {
           height: 15,
         ),
         Row(
-          children: [
-            const SizedBox(width: 15),
-            const Expanded(
+          children: const [
+            SizedBox(width: 15),
+            Expanded(
               child: Card(
                 backgroundColor: Color.fromARGB(255, 179, 239, 241),
                 child: ListTile(
@@ -61,8 +61,8 @@ class ResponsibleManager extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 15),
-            const Expanded(
+            SizedBox(width: 15),
+            Expanded(
               child: Card(
                 backgroundColor: Color.fromARGB(255, 192, 179, 241),
                 child: ListTile(
@@ -72,13 +72,13 @@ class ResponsibleManager extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(width: 15),
-            const Expanded(
+            SizedBox(width: 15),
+            Expanded(
               child: Card(
                 child: Icon(FluentIcons.add_medium),
               ),
             ),
-            const SizedBox(width: 15),
+            SizedBox(width: 15),
           ],
         ),
       ],
